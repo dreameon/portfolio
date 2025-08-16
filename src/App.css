@@ -1,38 +1,319 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ovo&display=swap");
+
+/* variables */
+:root {
+  --Colour-Font-Primary: #272525;
+  --Colour-Font-Secondary: #4e4c48;
+  --Colour-Font-Tertiary: #939088;
+  --Colour-Text-Quarternary: #8f887a;
+  --Colour-Background-Neutral: #f9f5f3;
+
+  --Spacing-Sections: 128px;
+  --Spacing-Body: 64px;
+  --Spacing-Caption: 8px;
+  --Spacing-Gallery: 24px;
+
+  --Radius-Card: 24px;
+  --Padding-Card: 24px;
+  --Padding-Gallery: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* font faces */
+body {
+  /* Body */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
+  list-style: none;
+  display: flex;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+nav ul li {
+  padding: 20px;
+}
+
+nav ul li a {
+  color: var(--Colour-Font-Primary);
+  text-decoration: none;
+}
+
+.current {
+  border-bottom: 4px solid white;
+}
+
+h1 {
+  /* Heading 1 */
+  color: var(--Colour-Font-Secondary);
+  font-family: Ovo;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 75% */
+  text-transform: lowercase;
+}
+
+h2 {
+  /* Heading 2 */
+  color: var(--Colour-Font-Secondary);
+  font-family: Ovo;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 111.111% */
+}
+
+h3 {
+  /* Heading 2 */
+  color: var(--Colour-Font-Secondary);
+  font-family: Ovo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 111.111% */
+}
+
+h4 {
+  /* Heading 4 */
+  color: var(--Colour-Font-Tertiary);
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 100% */
+  letter-spacing: 1.28px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h6 {
+  /* Heading 6 */
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  text-transform: uppercase;
+}
+
+b {
+  /* Body Bold */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+
+i {
+  /*Body Italic */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+p {
+  /* Body */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  align-self: stretch;
+}
+
+figcaption {
+  /* Caption */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px; /* 133.333% */
+}
+
+footer {
+  /* footer */
+  color: var(--Colour-Font-Primary);
+  font-family: Mulish;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Other */
+.project {
+  display: flex;
+  padding: var(--Spacing-Sections) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Spacing-Sections);
+  align-self: stretch;
+}
+
+.section {
+  display: flex;
+  padding: 0 256px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.section-body {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Spacing-Body);
+  align-self: stretch;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.subsection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Spacing-Caption);
+  align-self: stretch;
+}
+
+.card.bottom-cropped {
+  display: flex;
+  height: 586px;
+  padding: var(--Padding-Gallery) var(--Padding-Gallery) 0
+    var(--Padding-Gallery);
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.card.bottom-cropped {
+  display: flex;
+  height: 586px;
+  padding: 0 var(--Padding-Gallery) 0 var(--Padding-Gallery);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.card-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--Spacing-Gallery);
+  align-self: stretch;
+}
+
+.base-card {
+  display: flex;
+  padding: var(--Padding-Card);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: var(--Radius-Card);
+  flex: 1 0;
+}
+
+.base-banner {
+  display: flex;
+  height: 560px;
+  padding: 0 256px;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
 }
 
-.App-link {
-  color: #61dafb;
+.banner-img {
+  height: 559.698px;
+  flex-shrink: 0;
+  align-self: stretch;
+  aspect-ratio: 257/155;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.base-title {
+  display: flex;
+  padding-right: 64px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.synopsis {
+  display: flex;
+  padding: 0 256px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.overview {
+  display: flex;
+  padding: 24px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.base-project-specs {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  flex: 1 0 0;
+  border-radius: var(--Radius-Frame, 24px);
+}
+
+.project-spec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.secondary {
 }
