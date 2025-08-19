@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --Colour-Font-Primary: #272525;
+    --Colour-Font-Secondary: #4e4c48;
+    --Colour-Font-Tertiary: #939088;
+    --Colour-Text-Quarternary: #8f887a;
+    --Colour-Background-Neutral: #f9f5f3;
+
+    --Spacing-Sections: 128px;
+    --Spacing-Body: 64px;
+    --Spacing-Section-Header: 16px;
+    --Spacing-Caption: 8px;
+    --Spacing-Default: 24px;
+    --Spacing-Synopsis: 24px;
+
+    --Radius-Card: 24px;
+    --Padding-Card: 24px;
+    --Padding-Gallery: 40px;
+    --Padding-Page: 256px;
+  }
+
+  /* Add your base styles here */
+
+  h1 {
+    color: var(--Colour-Font-Secondary);
+    font-family: Ovo;
+    font-style: normal;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 75%;
+    text-transform: lowercase;
+  }
+
+  h2 {
+    color: var(--Colour-Font-Secondary);
+    font-family: Ovo;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 111.111% */
+  }
+
+  h4 {
+    /* Heading 4 */
+    color: var(--Colour-Font-Tertiary);
+    font-family: Mulish;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h6 {
+    /* Heading 6 */
+    font-family: Mulish;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  body {
+    /* Body */
+    color: var(--Colour-Font-Primary);
+    font-family: Mulish;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  li {
+    color: var(--Colour-Font-Primary);
+    font-family: Mulish;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-left: 1.5rem;
+  }
+
+  .snuggle li {
+    color: var(--Colour-Font-Secondary);
+  }
+
+  figcaption {
+    color: var(--Colour-Font-Primary);
+    font-family: Mulish;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px; /* 133.333% */
+  }
+  .snuggle {
+    --Token-Colour-Banner-Background: #ffe4b2;
+    --Token-Colour-Border: #ffe6b4;
+    --Token-Colour-Project-Specs: #fff6e6;
+    --Token-Colour-Card-Outline: #ffd78c;
+    --Token-Colour-Card: #fff6e6;
+
+    /* Snuggle only variables */
+    --Colour-Card-Shelter: #edfaf8;
+    --Colour-Font-Shelter: #10a196;
+    --Colour-Font-Adopter: #ffa705;
+
+    --Colour-Outline-Shelter: #ace6dd;
+    --Colour-Outline-Adopter: #ffe4b2;
+  }
+
+  .apothecare {
+    --Token-Colour-Banner-Background: #d2dca3;
+    --Token-Colour-Border: #d2dca3;
+    --Token-Colour-Project-Specs: #f5f7eb;
+    --Token-Colour-Card-Outline: #d2dca3;
+    --Token-Colour-Card: #e1e7c1;
+
+    /* Apothecare only variables */
+    --Colour-Card-Apothecare: #f9f5f3;
+  }
+
+  .myanimelist {
+    --Token-Colour-Banner-Background: #c7eee8;
+    --Token-Colour-Border: #d7f3eb;
+    --Token-Colour-Project-Specs: #edfaf8;
+    --Token-Colour-Card-Outline: #ace6dd;
+    --Token-Colour-Card: #edfaf8;
+  }
+}
