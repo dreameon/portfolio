@@ -75,7 +75,7 @@
     line-height: 150%;
   }
 
-  li {
+  .project li {
     color: var(--Colour-Font-Primary);
     font-family: Mulish;
     font-size: 1rem;

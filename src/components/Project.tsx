@@ -64,7 +64,7 @@ export default function Project({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col">
+    <div className="project flex flex-col">
       <Banner src={bannerSrc} alt={`Banner for ${title} project`} />
       <div className="flex py-(--Spacing-Sections) flex-col items-start gap-(--Spacing-Sections) self-stretch">
         <ProjectTitle>{title}</ProjectTitle>
