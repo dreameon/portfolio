@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Ovo, Mulish } from "next/font/google";
 import "./globals.css";
 import { type ReactNode, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const ovo = Ovo({
   variable: "--font-ovo",
@@ -23,24 +24,20 @@ const mulish = Mulish({
 // };
 
 function NavElement({
-  nav,
-  link,
-  onClick,
+  paths,
+  path,
   children,
 }: {
-  nav: string;
-  link: string;
-  onClick: (navLocation: string) => void;
+  paths: string[];
+  path: string;
   children: ReactNode;
 }) {
-  const style =
-    nav === link
-      ? "underline text-(--Colour-Font-Primary)"
-      : "text-(--Colour-Font-Tertiary)";
+  const style = paths.includes(path)
+    ? "underline text-(--Colour-Font-Primary)"
+    : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex justify-center items-center py-[24px]  px-[48px]  ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
-      onClick={() => onClick(link)}
+      className={`flex justify-center items-center py-[24px]  px-[48px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
@@ -48,57 +45,39 @@ function NavElement({
 }
 
 // TO-DO: Build drop-down for nav-bar
-function NavProject({
-  onClick,
-  href,
-  children,
-}: {
-  onClick: (navLocation: string) => void;
-  href: string;
-  children: ReactNode;
-}) {
+function NavProject({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
       className="flex self-stretch justify-center items-center px-[32px] py-[16px] 
       font-[Mulish] text-[0.75rem]/[1rem] tracking-[0.96px] uppercase text-(--Colour-Font-Tertiary)
-       bg-white hover:bg-[#EDEDED]"
-      onClick={() => onClick("work")}
+       bg-white hover:bg-[#EDEDED] hover:text-(--Colour-Font-Secondary) transition ease-in-out duration-300"
     >
       <div className="no-underline">{children}</div>
     </Link>
   );
 }
 
-function DropDown({ onClick }: { onClick: (navLocation: string) => void }) {
+function DropDown() {
   return (
     <ul className="absolute  w-[256px] border border-solid border-[#EDEDED] ">
       <li>
-        <NavProject onClick={onClick} href="/work/snuggle">
-          snuggle
-        </NavProject>
+        <NavProject href="/work/snuggle">snuggle</NavProject>
       </li>
       <li>
-        <NavProject onClick={onClick} href="/work/apothecare">
-          apothecare
-        </NavProject>
+        <NavProject href="/work/apothecare">apothecare</NavProject>
       </li>
       <li>
-        <NavProject onClick={onClick} href="/work/myanimelist">
-          myanimelist
-        </NavProject>
+        <NavProject href="/work/myanimelist">myanimelist</NavProject>
       </li>
     </ul>
   );
 }
 
 function NavBar() {
-  const [nav, setNav] = useState("home");
+  const path = usePathname();
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-  function handleNavClick(navLocation: string) {
-    setNav(navLocation);
-  }
   function handleMouseEnter() {
     setDropdownVisible(true);
   }
@@ -118,39 +97,18 @@ function NavBar() {
         <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
       </div>
       <nav className="self-stretch inline-flex justify-start items-center gap-[24px]">
-        <NavElement nav={nav} link="home" onClick={handleNavClick}>
+        <NavElement paths={["/"]} path={path}>
           <Link href="/">home</Link>
         </NavElement>
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <NavElement nav={nav} link="work" onClick={handleNavClick}>
+          <NavElement
+            paths={["/work/snuggle", "/work/apothecare", "/work/myanimelist"]}
+            path={path}
+          >
             work
           </NavElement>
-          {isDropdownVisible && <DropDown onClick={handleNavClick} />}
+          {isDropdownVisible && <DropDown />}
         </div>
-        {/* <NavElement
-          nav={nav}
-          link="snuggle"
-          onClick={handleClick}
-          href="/work/snuggle"
-        >
-          snuggle
-        </NavElement>
-        <NavElement
-          nav={nav}
-          link="apothecare"
-          onClick={handleClick}
-          href="/work/apothecare"
-        >
-          apothecare
-        </NavElement>
-        <NavElement
-          nav={nav}
-          link="myanimelist"
-          onClick={handleClick}
-          href="/work/myanimelist"
-        >
-          myanimelist
-        </NavElement> */}
       </nav>
     </div>
   );

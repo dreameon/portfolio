@@ -34,7 +34,7 @@ function Intro() {
       <Image
         width={208}
         height={208}
-        src="/assets/home/avatar.svg"
+        src="/assets/home/avatar.png"
         alt="Avatar"
       />
       <div className="flex flex-col gap-[32px] grow items-start self-stretch">

@@ -48,7 +48,6 @@ export default function MyAnimeList() {
                 Overwhelming and unintuitive interface
               </li>
               <li className="list-disc">Lack of feedback</li>
-              <li className="list-disc">Not fun enough!!</li>
             </ul>
           </ParagraphBlock>
 
