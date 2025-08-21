@@ -1,6 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import Link from "next/link";
 import { Ovo, Mulish } from "next/font/google";
 import "./globals.css";
@@ -37,7 +37,7 @@ function NavElement({
     : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex justify-center items-center py-[24px]  px-[48px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
+      className={`flex justify-center items-center py-[24px]  px-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
@@ -92,7 +92,7 @@ function NavBar() {
   // };
 
   return (
-    <div className="w-[100vw] px-8 md:px-16 lg:px-[256px] pt-[24px] sticky top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10)] inline-flex justify-between items-center">
+    <div className="w-full flex flex-1 px-8 md:px-16 lg:px-[256px] pt-[24px] sticky top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10) justify-between items-center">
       <div className="justify-start">
         <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
       </div>

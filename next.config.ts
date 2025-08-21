@@ -28,4 +28,6 @@ const nextConfig: () => Promise<NextConfig> = async () => {
   };
 };
 
+export const runtime = "edge";
+
 export default nextConfig;
