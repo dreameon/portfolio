@@ -31,14 +31,14 @@ function ProjectCard({
 
 function Intro() {
   return (
-    <div className="flex flex-col grow items-start md:flex-row self-stretch gap-[48px] py-[64px]">
+    <div className="flex flex-col md:flex-row flex-1 items-start self-stretch gap-[48px] py-[64px]">
       <Image
         width={208}
         height={208}
         src="/assets/home/avatar.png"
         alt="Avatar"
       />
-      <div className="flex flex-col gap-[32px] grow items-start self-stretch">
+      <div className="flex flex-col flex-1 gap-[32px]  items-start self-stretch">
         <div className="flex flex-col justify-center items-start gap-[16px]">
           <h1 className="text-(--Colour-Font-Primary)">Hi, I&apos;m Evelyn!</h1>
           <h4>my friends call me eevee (like the pokemon).</h4>
@@ -61,7 +61,7 @@ function Intro() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] self-stretch ">
+    <div className="flex flex-col self-stretch items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px]">
       <Intro />
       <div className="flex flex-col flex-1 self-stretch py-[48px] gap-[24px]">
         <h2>my works</h2>

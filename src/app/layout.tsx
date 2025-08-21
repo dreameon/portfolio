@@ -92,24 +92,26 @@ function NavBar() {
   // };
 
   return (
-    <div className="w-full flex flex-1 px-8 md:px-16 lg:px-[256px] pt-[24px] sticky top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10) justify-between items-center">
-      <div className="justify-start">
-        <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
-      </div>
-      <nav className="self-stretch inline-flex justify-start items-center gap-[24px]">
-        <NavElement paths={["/"]} path={path}>
-          <Link href="/">home</Link>
-        </NavElement>
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <NavElement
-            paths={["/work/snuggle", "/work/apothecare", "/work/myanimelist"]}
-            path={path}
-          >
-            work
-          </NavElement>
-          {isDropdownVisible && <DropDown />}
+    <div className="w-full flex self-stretch px-8 md:px-16 lg:px-auto pt-[24px] justify-center sticky top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10)">
+      <div className="flex flex-row flex-1 self-stretch justify-between items-center max-w-[928px]">
+        <div className="">
+          <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
         </div>
-      </nav>
+        <nav className="self-stretch flex flex-row justify-start items-center gap-[24px]">
+          <NavElement paths={["/"]} path={path}>
+            <Link href="/">home</Link>
+          </NavElement>
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <NavElement
+              paths={["/work/snuggle", "/work/apothecare", "/work/myanimelist"]}
+              path={path}
+            >
+              work
+            </NavElement>
+            {isDropdownVisible && <DropDown />}
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }
