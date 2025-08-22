@@ -1,28 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
+import SnuggleBanner from "~/public/assets/home/snuggle-banner.png";
+import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
+import MALBanner from "~/public/assets/home/myanimelist-banner.png";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 function ProjectCard({
   bannerImgSrc,
   project,
   projectTitle,
 }: {
-  bannerImgSrc: string;
+  bannerImgSrc: string | StaticImport;
   project: string;
   projectTitle: string;
 }) {
   return (
     <div
-      className={`${project} flex flex-col flex-1 lg:flex-row items-center justify-end self-stretch h-auto lg:h-[256px]
-      shadow-[2px_4px_8px_rgba(107,84,39,0.10)] rounded-(--Radius-Card) overflow-hidden`}
+      className={`${project} flex flex-col flex-1 lg:flex-row items-center justify-center self-stretch h-auto lg:h-[256px] overflow-hidden
+      shadow-[2px_4px_8px_rgba(107,84,39,0.10)] rounded-(--Radius-Card)`}
     >
-      <Image
-        width={1824}
-        height={768}
-        src={bannerImgSrc}
-        className="w-auto h-full object-cover"
-        alt={`Banner image for ${project} project`}
-      />
-      <div className="flex flex-1 items-center justify-center self-stretch  py-[24px] lg:py-auto bg-(--Token-Colour-Project-Specs)">
+      <div className="">
+        <Image
+          src={bannerImgSrc}
+          className=""
+          alt={`Banner image for ${project} project`}
+        />
+      </div>
+      <div className="flex items-center justify-center self-stretch min-w-[256px] py-[24px] bg-(--Token-Colour-Project-Specs)">
         <h4>{projectTitle}</h4>
       </div>
     </div>
@@ -68,21 +72,21 @@ export default function Home() {
         <div className="flex flex-col flex-1 items-start self-stretch gap-[48px]">
           <Link href="/work/snuggle" className="flex flex-1 self-stretch">
             <ProjectCard
-              bannerImgSrc="/assets/home/snuggle-banner.png"
+              bannerImgSrc={SnuggleBanner}
               project="snuggle"
               projectTitle="Snuggle"
             ></ProjectCard>
           </Link>
           <Link href="/work/apothecare" className="flex flex-1 self-stretch">
             <ProjectCard
-              bannerImgSrc="/assets/home/apothecare-banner.png"
+              bannerImgSrc={ApothecareBanner}
               project="apothecare"
               projectTitle="Apothecare"
             ></ProjectCard>
           </Link>
           <Link href="/work/myanimelist" className="flex flex-1 self-stretch">
             <ProjectCard
-              bannerImgSrc="/assets/home/myanimelist-banner.png"
+              bannerImgSrc={MALBanner}
               project="myanimelist"
               projectTitle="MyAnimeList (Redesign)"
             ></ProjectCard>
