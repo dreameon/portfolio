@@ -31,10 +31,11 @@ export function ImageCard({
 }) {
   return (
     <Image
+      className={`w-auto object-cover rounded-(--Radius-Card)`}
       width={width}
       height={height}
       quality={100}
-      className={`w-auto h-[${height}px] object-cover rounded-(--Radius-Card)`}
+      style={{ height: height }}
       src={src}
       alt={alt}
     />
