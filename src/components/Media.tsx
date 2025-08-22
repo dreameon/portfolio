@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type ReactNode } from "react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export function VideoCard({ src, alt }: { src: string; alt: string }) {
   return (
@@ -9,7 +10,7 @@ export function VideoCard({ src, alt }: { src: string; alt: string }) {
       loop
       playsInline
       muted
-      className={`w-auto h-[650px] rounded-(--Radius-Card)`}
+      className="h-[600px] rounded-(--Radius-Card)"
     >
       <source src={src} type="video/mp4" />
       <track kind="captions" />
@@ -21,34 +22,33 @@ export function VideoCard({ src, alt }: { src: string; alt: string }) {
 export function ImageCard({
   src,
   alt,
-  width = 350,
-  height = 650,
+  height = "h-[600px]",
 }: {
-  src: string;
+  src: StaticImport;
   alt: string;
-  width?: number;
-  height?: number;
+  height?: string;
 }) {
   return (
     <Image
-      className={`w-auto object-cover rounded-(--Radius-Card)`}
-      width={width}
-      height={height}
+      className={`${height} w-auto object-cover rounded-(--Radius-Card)`}
       quality={100}
-      style={{ height: height }}
       src={src}
       alt={alt}
     />
   );
 }
 
-export function ImageFullWidth({ src, alt }: { src: string; alt: string }) {
+export function ImageFullWidth({
+  src,
+  alt,
+}: {
+  src: StaticImport;
+  alt: string;
+}) {
   return (
     <Image
-      width={928}
-      height={0}
       quality={100}
-      className={`w-full h-auto object-cover rounded-(--Radius-Card)`}
+      className={`w-full object-cover rounded-(--Radius-Card)`}
       src={src}
       alt={alt}
     />
@@ -76,7 +76,7 @@ export function GalleryCard({
 
   return (
     <div
-      className={`flex flex-col flex-1 min-[800px]:flex-row justify-center px-[24px] items-center self-stretch gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
+      className={`flex flex-col flex-1 min-[800px]:flex-row justify-center items-center self-stretch md:px-[24px] gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
     >
       {children}
     </div>
@@ -95,7 +95,7 @@ export function Gallery({
   const flex = isEqual ? "basis-0" : "";
   return (
     <div
-      className={`flex flex-col ${flex} grow items-start self-stretch gap-(--Spacing-Caption)`}
+      className={`flex flex-col grow items-start self-stretch gap-(--Spacing-Caption)`}
     >
       {children}
       <figcaption>{caption}</figcaption>

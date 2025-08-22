@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
 /* Pain Points Section */
@@ -9,7 +10,7 @@ export function PainPoint({
   type,
   children,
 }: {
-  icon: string;
+  icon: StaticImport;
   iconAlt: string;
   painPoint: string;
   type: "shelter" | "adopter";

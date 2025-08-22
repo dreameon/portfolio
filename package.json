@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "next": "15.4.6",
+    "radix-ui": "^1.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

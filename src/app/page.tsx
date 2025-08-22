@@ -49,8 +49,9 @@ function Intro() {
         </div>
         <div className="flex flex-col gap-[16px]">
           <p className="text-(--Colour-Font-Secondary)">
-            i&apos;m an artist with a bachelors in compsci. <br />i speak both
-            design and code.
+            i&apos;m an <b>artist</b> with a bachelors in <b>compsci</b> from
+            uwaterloo.
+            <br />i speak both design and code.
           </p>
 
           <figcaption>

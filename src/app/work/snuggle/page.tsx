@@ -16,14 +16,29 @@ import {
   VideoCard,
   ImageCard,
 } from "@/components/Media";
+import banner from "~/public/assets/snuggle/banner.png";
+import sample from "~/public/assets/snuggle/sample.png";
+import alert from "~/public/assets/snuggle/alert.png";
+import chat from "~/public/assets/snuggle/chat.png";
+import designSystem from "~/public/assets/snuggle/design-system.png";
+import form from "~/public/assets/snuggle/form.png";
+import listing from "~/public/assets/snuggle/listing.png";
+import onboarding from "~/public/assets/snuggle/onboarding.png";
+import tutorialBrief from "~/public/assets/snuggle/tutorial-brief.png";
+import clockIcon from "~/public/assets/snuggle/clock-icon.svg";
+import eyeIcon from "~/public/assets/snuggle/eye-icon.svg";
+import flagIcon from "~/public/assets/snuggle/flag-icon.svg";
+import formIcon from "~/public/assets/snuggle/form-icon.svg";
+import ghostIcon from "~/public/assets/snuggle/ghost-icon.svg";
+import warningIcon from "~/public/assets/snuggle/warning-icon.svg";
 
 export default function Snuggle() {
   return (
     <div className="snuggle">
       <Project
         title="Snuggle"
-        bannerSrc="/assets/snuggle/banner.png"
-        sampleSrc="/assets/snuggle/sample.png"
+        bannerSrc={banner}
+        sampleSrc={sample}
         overview={[
           "Graduate program team capstone project aiming to help animal shelters connect with potential adopters",
           "Snuggle is a smart pet-adoption matching platform that helps both ends of the leash find the perfect, long-lasting companion with ease",
@@ -47,7 +62,7 @@ export default function Snuggle() {
           <Subsection subsectionTitle="shelter pain points">
             <PainPoints type="shelter">
               <PainPoint
-                icon="/assets/snuggle/clock-icon.svg"
+                icon={clockIcon}
                 iconAlt="Clock icon"
                 painPoint="Spread Too Thin"
                 type="shelter"
@@ -57,7 +72,7 @@ export default function Snuggle() {
                 applicants and assist them with their needs
               </PainPoint>
               <PainPoint
-                icon="/assets/snuggle/warning-icon.svg"
+                icon={warningIcon}
                 iconAlt="Warning icon"
                 painPoint="Prehistoric Processes"
                 type="shelter"
@@ -72,7 +87,7 @@ export default function Snuggle() {
           <Subsection subsectionTitle="adopter pain points">
             <PainPoints type="adopter">
               <PainPoint
-                icon="/assets/snuggle/form-icon.svg"
+                icon={formIcon}
                 iconAlt="Form icon"
                 painPoint="Tedious Applications"
                 type="adopter"
@@ -81,7 +96,7 @@ export default function Snuggle() {
                 is not fun
               </PainPoint>
               <PainPoint
-                icon="/assets/snuggle/ghost-icon.svg"
+                icon={ghostIcon}
                 iconAlt="Ghost icon"
                 painPoint="Being Ghosted"
                 type="adopter"
@@ -90,7 +105,7 @@ export default function Snuggle() {
                 been rejected (and, if so, for what reason)
               </PainPoint>
               <PainPoint
-                icon="/assets/snuggle/eye-icon.svg"
+                icon={eyeIcon}
                 iconAlt="Eye icon"
                 painPoint="Non-transparent & Confusing"
                 type="adopter"
@@ -101,7 +116,7 @@ export default function Snuggle() {
                 underestimate commitment and responsibilities of a new pet
               </PainPoint>
               <PainPoint
-                icon="/assets/snuggle/flag-icon.svg"
+                icon={flagIcon}
                 iconAlt="Flag icon"
                 painPoint="Forced to Jump the Gun"
                 type="adopter"
@@ -112,16 +127,10 @@ export default function Snuggle() {
             </PainPoints>
           </Subsection>
           <Gallery caption="The listing is cute, but offers very little information about Serena">
-            <ImageFullWidth
-              src="/assets/snuggle/listing.png"
-              alt="Example shelter pet listing"
-            />
+            <ImageFullWidth src={listing} alt="Example shelter pet listing" />
           </Gallery>
           <Gallery caption="Example application form that illustrates the tedious process (imagine having to fill out one of these for each shelter you’re applying to)">
-            <ImageFullWidth
-              src="/assets/snuggle/form.png"
-              alt="Example application form"
-            />
+            <ImageFullWidth src={form} alt="Example application form" />
           </Gallery>
         </Section>
 
@@ -319,27 +328,21 @@ export default function Snuggle() {
           </p>
           <Gallery caption="The entire design system was built from scratch to ensure consistency between elements. I made sure to use good naming practices & design tokens for maintainability">
             <ImageFullWidth
-              src="/assets/snuggle/design-system.png"
+              src={designSystem}
               alt="Design system for Snuggle"
             />
           </Gallery>
           <Gallery caption="New onboarding flow to replace original application forms. Short and sweet">
             <ImageFullWidth
-              src="/assets/snuggle/onboarding.png"
+              src={onboarding}
               alt="Screens showing the onboarding flow for Snuggle"
             />
           </Gallery>
           <Gallery caption="You receive encouragement as you proceed each stage. Yay dopamine!">
-            <ImageFullWidth
-              src="/assets/snuggle/alert.png"
-              alt="Sample alert screens"
-            />
+            <ImageFullWidth src={alert} alt="Sample alert screens" />
           </Gallery>
           <Gallery caption="From getting answers to your questions to scheduling meetings, everything is self served. The actual message content was done by another team member">
-            <ImageFullWidth
-              src="/assets/snuggle/chat.png"
-              alt="Sample Snuggle screens"
-            />
+            <ImageFullWidth src={chat} alt="Sample Snuggle screens" />
           </Gallery>
         </Section>
 
@@ -355,7 +358,7 @@ export default function Snuggle() {
           <Gallery caption="The tutorial introduction you would see after onboarding">
             <GalleryCard isOriginal={false}>
               <ImageCard
-                src="/assets/snuggle/tutorial-brief.png"
+                src={tutorialBrief}
                 alt="Screen welcoming users to the Snuggle tutorial and sample tutorial step"
               />
               <VideoCard

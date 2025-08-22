@@ -1,13 +1,12 @@
 import { ProjectSynopsis } from "./ProjectSynopsis";
 import { PropsWithChildren, type ReactNode } from "react";
 import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-function ProjectSample({ src, alt }: { src: string; alt: string }) {
+function ProjectSample({ src, alt }: { src: StaticImport; alt: string }) {
   return (
     <div className="flex flex-col items-center self-stretch px-8 bg-(--Token-Colour-Card)">
       <Image
-        width="1184"
-        height="0"
         sizes="100vw"
         className="w-full lg:max-w-[1184px] h-auto"
         src={src}
@@ -17,14 +16,15 @@ function ProjectSample({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function Banner({ src, alt }: { src: string; alt: string }) {
+function Banner({ src, alt }: { src: StaticImport; alt: string }) {
   return (
-    <div className="flex flex-col object-cover justify-center overflow-hidden px-[128px] items-center self-stretch h-[256px] md:h-[500px] bg-(--Token-Colour-Banner-Background)">
+    <div
+      className="flex flex-col justify-center overflow-hidden items-center self-stretch
+      px-8 md:px-16 lg:px-auto bg-(--Token-Colour-Banner-Background)"
+    >
       <Image
-        width="928"
-        height="900"
         sizes="100vw"
-        className="max-w-[928px] h-auto"
+        className="lg:max-w-[928px] w-full h-auto object-cover"
         src={src}
         alt={alt}
       />
@@ -35,7 +35,10 @@ function Banner({ src, alt }: { src: string; alt: string }) {
 function ProjectTitle({ children }: PropsWithChildren) {
   return (
     <div className="flex flex-col justify-center items-start mx-8 md:mx-16 lg:mx-auto lg:min-w-[928px] gap-[8px] self-stretch">
-      <div className="flex pr-[64px] justify-center items-center gap-[10px] border-b-[4px] border-solid border-(--Token-Colour-Border)">
+      <div
+        className="flex pr-[64px] justify-center items-center gap-[10px] 
+      border-b-[4px] border-solid border-(--Token-Colour-Border)"
+      >
         <h1 className="text-[3rem] lg:text-[4rem]">{children}</h1>
       </div>
     </div>
@@ -54,8 +57,8 @@ export default function Project({
   children,
 }: {
   title: string;
-  bannerSrc: string;
-  sampleSrc: string;
+  bannerSrc: StaticImport;
+  sampleSrc: StaticImport;
   overview: string[];
   role: string;
   roleBreakdown: string;

@@ -8,14 +8,23 @@ import {
   VideoCard,
   ImageCard,
 } from "@/components/Media";
+import banner from "~/public/assets/apothecare/banner.png";
+import criteria from "~/public/assets/apothecare/criteria.png";
+import display from "~/public/assets/apothecare/display.png";
+import infoArch from "~/public/assets/apothecare/info-arch.png";
+import productPage from "~/public/assets/apothecare/product-page.png";
+import sample from "~/public/assets/apothecare/sample.png";
+import skinProfileComponents from "~/public/assets/apothecare/skin-profile-components.png";
+import skinProfile from "~/public/assets/apothecare/skin-profile.png";
+import sknicareJournal from "~/public/assets/apothecare/skincare-journal.png";
 
 export default function Apothecare() {
   return (
     <div className="apothecare">
       <Project
         title="Apothecare"
-        bannerSrc="/assets/apothecare/banner.png"
-        sampleSrc="/assets/apothecare/sample.png"
+        bannerSrc={banner}
+        sampleSrc={sample}
         overview={[
           "Fictional skincare e-commerce app with the goal of simplifying skincare ",
           "apothecare has the first and foremost goal of to providing users with enough information to make well-informed decisions while finding a skincare routine that works for them",
@@ -73,28 +82,28 @@ export default function Apothecare() {
 
           <Gallery caption="Information architecture was a key consideration during low-fidelity wireframing">
             <ImageFullWidth
-              src="/assets/apothecare/info-arch.png"
+              src={infoArch}
               alt="Low-fidelity wireframes for Apothecare"
             />
           </Gallery>
 
           <Gallery caption="Users can search by different criteria">
             <ImageFullWidth
-              src="/assets/apothecare/criteria.png"
+              src={criteria}
               alt="Three sample search process screens"
             />
           </Gallery>
 
           <Gallery caption="Clean display of information that can be easily parsed">
             <ImageFullWidth
-              src="/assets/apothecare/display.png"
+              src={display}
               alt="Sample elements in design system"
             />
           </Gallery>
 
           <Gallery caption="Product page breaks down compatibility and other useful information">
             <ImageFullWidth
-              src="/assets/apothecare/product-page.png"
+              src={productPage}
               alt="Sample product page screen with its components"
             />
           </Gallery>
@@ -111,12 +120,7 @@ export default function Apothecare() {
           <GalleryContainer>
             <Gallery caption="">
               <GalleryCard isOriginal={false}>
-                <ImageCard
-                  width={277}
-                  height={600}
-                  src="/assets/apothecare/skin-profile.png"
-                  alt="Skin profile screen"
-                />
+                <ImageCard src={skinProfile} alt="Skin profile screen" />
               </GalleryCard>
             </Gallery>
 
@@ -126,9 +130,7 @@ export default function Apothecare() {
                 bgColour="bg-(--Colour-Card-Apothecare)"
               >
                 <ImageCard
-                  width={499}
-                  height={600}
-                  src="/assets/apothecare/skin-profile-components.png"
+                  src={skinProfileComponents}
                   alt="Components of skin profile"
                 />
               </GalleryCard>
@@ -136,10 +138,7 @@ export default function Apothecare() {
           </GalleryContainer>
 
           <Gallery caption="">
-            <ImageFullWidth
-              src="/assets/apothecare/skincare-journal.png"
-              alt="Skin journal screens"
-            />
+            <ImageFullWidth src={sknicareJournal} alt="Skin journal screens" />
           </Gallery>
         </Section>
       </Project>
