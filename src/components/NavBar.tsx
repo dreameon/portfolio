@@ -70,7 +70,7 @@ function DropDown() {
             work
           </NavElement>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="md:right-auto w-[256px] border border-solid border-[#EDEDED]">
+        <DropdownMenu.Content className="w-[256px] border border-solid border-[#EDEDED]">
           <NavProject href="/work/snuggle">snuggle</NavProject>
           <NavProject href="/work/apothecare">apothecare</NavProject>
           <NavProject href="/work/myanimelist">myanimelist</NavProject>
@@ -91,9 +91,9 @@ export default function NavBar() {
   return (
     <div className="w-full flex self-stretch px-8 md:px-16 lg:px-auto pt-[24px] justify-center sticky z-10 top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10)]">
       <div className="flex flex-row flex-1 self-stretch justify-between items-center max-w-[928px]">
-        <div className="">
-          <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
-        </div>
+        <Link className="text-(--Colour-Font-Secondary)" href="/">
+          evelyn law
+        </Link>
         <nav className="self-stretch flex flex-row justify-start items-center gap-[24px] lg:gap-[48px]">
           <NavElement paths={["/"]} path={path}>
             <Link href="/">home</Link>
