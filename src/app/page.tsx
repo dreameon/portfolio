@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Avatar from "~/public/assets/home/avatar.png";
 import SnuggleBanner from "~/public/assets/home/snuggle-banner.png";
 import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
@@ -37,10 +38,9 @@ function Intro() {
   return (
     <div className="flex flex-col md:flex-row flex-1 items-start self-stretch gap-[48px]">
       <Image
-        width={208}
-        height={208}
-        src="/assets/home/avatar.png"
-        alt="Avatar"
+        src={Avatar}
+        alt="Picture of me!"
+        className="w-[208px] h-[208px]"
       />
       <div className="flex flex-col flex-1 gap-[32px] items-start self-stretch">
         <div className="flex flex-col justify-center items-start gap-[24px] md:gap-[16px]">
