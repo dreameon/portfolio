@@ -4,13 +4,12 @@ import { type ReactNode } from "react";
 export function VideoCard({ src, alt }: { src: string; alt: string }) {
   return (
     <video
-      className="rounded-(--Radius-Card)"
       controls
       autoPlay
       loop
       playsInline
       muted
-      style={{ width: "auto", height: "650px" }}
+      className={`w-auto h-[650px] rounded-(--Radius-Card)`}
     >
       <source src={src} type="video/mp4" />
       <track kind="captions" />
@@ -34,8 +33,8 @@ export function ImageCard({
     <Image
       width={width}
       height={height}
-      style={{ width: "auto", height: height, objectFit: "cover" }}
-      className="rounded-(--Radius-Card)"
+      quality={100}
+      className={`w-auto h-[${height}px] object-cover rounded-(--Radius-Card)`}
       src={src}
       alt={alt}
     />
@@ -47,7 +46,8 @@ export function ImageFullWidth({ src, alt }: { src: string; alt: string }) {
     <Image
       width={928}
       height={0}
-      style={{ width: "100%", height: "auto" }}
+      quality={100}
+      className={`w-full h-auto object-cover rounded-(--Radius-Card)`}
       src={src}
       alt={alt}
     />
@@ -75,7 +75,7 @@ export function GalleryCard({
 
   return (
     <div
-      className={`flex flex-col min-[800px]:flex-row justify-center items-center self-stretch gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
+      className={`flex flex-col flex-1 min-[800px]:flex-row justify-center px-[24px] items-center self-stretch gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
     >
       {children}
     </div>
@@ -104,7 +104,7 @@ export function Gallery({
 
 export function GalleryContainer({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center gap-(--Spacing-Default) self-stretch">
+    <div className="flex flex-col flex-1 lg:flex-row justify-center items-center gap-(--Spacing-Default) self-stretch">
       {children}
     </div>
   );

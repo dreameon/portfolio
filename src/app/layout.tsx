@@ -37,7 +37,7 @@ function NavElement({
     : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex justify-center items-center py-[24px]  px-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
+      className={`flex justify-center items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
@@ -51,7 +51,7 @@ function NavProject({ href, children }: { href: string; children: ReactNode }) {
       href={href}
       className="flex self-stretch justify-center items-center px-[32px] py-[16px] 
       font-[Mulish] text-[0.75rem]/[1rem] tracking-[0.96px] uppercase text-(--Colour-Font-Tertiary)
-       bg-white hover:bg-[#EDEDED] hover:text-(--Colour-Font-Secondary) transition ease-in-out duration-300"
+       bg-white hover:bg-[#EDEDED] hover:text-(--Colour-Font-Secondary) active:bg-[#EDEDED] active:text-(--Colour-Font-Secondary) transition ease-in-out duration-300"
     >
       <div className="no-underline">{children}</div>
     </Link>
@@ -60,7 +60,7 @@ function NavProject({ href, children }: { href: string; children: ReactNode }) {
 
 function DropDown() {
   return (
-    <ul className="absolute  w-[256px] border border-solid border-[#EDEDED] ">
+    <ul className="absolute top-[96px] right-0 md:right-auto w-[256px] border border-solid border-[#EDEDED] ">
       <li>
         <NavProject href="/work/snuggle">snuggle</NavProject>
       </li>
@@ -86,29 +86,37 @@ function NavBar() {
     setDropdownVisible(false);
   }
 
+  function onClick() {
+    setDropdownVisible(false);
+  }
+
   // TO-DO: implement dropdown click
   // function handleDropDownClick() {
   //   setDropdownVisible(true);
   // };
 
   return (
-    <div className="w-full flex self-stretch px-8 md:px-16 lg:px-auto pt-[24px] justify-center sticky top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10)">
+    <div className="w-full flex self-stretch px-8 md:px-16 lg:px-auto pt-[24px] justify-center sticky z-10 top-0 bg-white shadow-[2px_4px_8px_0px_rgba(107,84,39,0.10)]">
       <div className="flex flex-row flex-1 self-stretch justify-between items-center max-w-[928px]">
         <div className="">
           <p className="text-(--Colour-Font-Secondary)">evelyn law</p>
         </div>
-        <nav className="self-stretch flex flex-row justify-start items-center gap-[24px]">
+        <nav className="self-stretch flex flex-row justify-start items-center gap-[24px] lg:gap-[48px]">
           <NavElement paths={["/"]} path={path}>
             <Link href="/">home</Link>
           </NavElement>
-          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={onClick}
+          >
             <NavElement
               paths={["/work/snuggle", "/work/apothecare", "/work/myanimelist"]}
               path={path}
             >
               work
+              {isDropdownVisible && <DropDown />}
             </NavElement>
-            {isDropdownVisible && <DropDown />}
           </div>
         </nav>
       </div>

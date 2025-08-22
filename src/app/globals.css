@@ -15,6 +15,10 @@
     --Spacing-Default: 24px;
     --Spacing-Synopsis: 24px;
 
+    --Spacing-Sections-Mobile: 64px;
+    --Spacing-Body-Mobile: 48px;
+    --Spacing-Synopsis-Mobile: var(--Spacing-Body-Mobile);
+
     --Radius-Card: 24px;
     --Padding-Card: 24px;
     --Padding-Gallery: 40px;

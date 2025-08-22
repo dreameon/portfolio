@@ -15,7 +15,7 @@ export default function Apothecare() {
       <Project
         title="Apothecare"
         bannerSrc="/assets/apothecare/banner.png"
-        sampleSrc="/assets/apothecare/sample.svg"
+        sampleSrc="/assets/apothecare/sample.png"
         overview={[
           "Fictional skincare e-commerce app with the goal of simplifying skincare ",
           "apothecare has the first and foremost goal of to providing users with enough information to make well-informed decisions while finding a skincare routine that works for them",
@@ -73,28 +73,28 @@ export default function Apothecare() {
 
           <Gallery caption="Information architecture was a key consideration during low-fidelity wireframing">
             <ImageFullWidth
-              src="/assets/apothecare/info-arch.svg"
+              src="/assets/apothecare/info-arch.png"
               alt="Low-fidelity wireframes for Apothecare"
             />
           </Gallery>
 
           <Gallery caption="Users can search by different criteria">
             <ImageFullWidth
-              src="/assets/apothecare/criteria.svg"
+              src="/assets/apothecare/criteria.png"
               alt="Three sample search process screens"
             />
           </Gallery>
 
           <Gallery caption="Clean display of information that can be easily parsed">
             <ImageFullWidth
-              src="/assets/apothecare/display.svg"
+              src="/assets/apothecare/display.png"
               alt="Sample elements in design system"
             />
           </Gallery>
 
           <Gallery caption="Product page breaks down compatibility and other useful information">
             <ImageFullWidth
-              src="/assets/apothecare/product-page.svg"
+              src="/assets/apothecare/product-page.png"
               alt="Sample product page screen with its components"
             />
           </Gallery>
@@ -114,7 +114,7 @@ export default function Apothecare() {
                 <ImageCard
                   width={277}
                   height={600}
-                  src="/assets/apothecare/skin-profile.svg"
+                  src="/assets/apothecare/skin-profile.png"
                   alt="Skin profile screen"
                 />
               </GalleryCard>
@@ -128,7 +128,7 @@ export default function Apothecare() {
                 <ImageCard
                   width={499}
                   height={600}
-                  src="/assets/apothecare/skin-profile-components.svg"
+                  src="/assets/apothecare/skin-profile-components.png"
                   alt="Components of skin profile"
                 />
               </GalleryCard>
@@ -137,7 +137,7 @@ export default function Apothecare() {
 
           <Gallery caption="">
             <ImageFullWidth
-              src="/assets/apothecare/skincare-journal.svg"
+              src="/assets/apothecare/skincare-journal.png"
               alt="Skin journal screens"
             />
           </Gallery>

@@ -25,7 +25,7 @@ export function Section({
   return (
     <div className="flex flex-col items-start self-stretch mx-8 md:mx-16 lg:mx-auto max-w-[928px] gap-(--Spacing-Section-Header)">
       <h2>{sectionTitle}</h2>
-      <div className="flex flex-col items-start self-stretch gap-(--Spacing-Body)">
+      <div className="flex flex-col items-start self-stretch gap-(--Spacing-Body-Mobile) md:gap-(--Spacing-Body)">
         {children}
       </div>
     </div>

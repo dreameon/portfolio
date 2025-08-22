@@ -205,7 +205,7 @@ export default function Snuggle() {
               </ProcessStep>
             </Process>
 
-            <Process type="shelter" processTitle="Onboard">
+            <Process type="shelter" processTitle="Snuggle's Shelter Process">
               <ProcessStep type="shelter" step="Post Listing">
                 <ProcessDescriptionWrapper>
                   <li className="font-bold">System generates pet profile</li>

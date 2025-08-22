@@ -16,7 +16,7 @@ export default function MyAnimeList() {
       <Project
         title="MyAnimeList"
         bannerSrc="/assets/myanimelist/banner.png"
-        sampleSrc="/assets/myanimelist/sample.svg"
+        sampleSrc="/assets/myanimelist/sample.png"
         overview={[
           "Redesign of MyAnimeList (MAL), a popular anime database and community app",
           "Transforming the MAL experience from confusing and overwhelming into intuitive and inclusive",
@@ -53,7 +53,7 @@ export default function MyAnimeList() {
 
           <Gallery caption="Example of how busy the old interface was">
             <ImageFullWidth
-              src="/assets/myanimelist/sample-old.svg"
+              src="/assets/myanimelist/sample-old.png"
               alt="Sample screens from original MAL app"
             />
           </Gallery>
@@ -97,13 +97,13 @@ export default function MyAnimeList() {
 
           <Gallery caption="Very crude low-fidelity brainstorming of different possible list formats, along with their potential to be used across the app. The ideal candidate would balance simplicity with utility">
             <ImageFullWidth
-              src="/assets/myanimelist/wireframes.svg"
+              src="/assets/myanimelist/wireframes.png"
               alt="Wireframes for list MyLists and Discover screens"
             />
           </Gallery>
           <Gallery caption="The new My Lists experience. Clicking into a list on the My Lists tab brings you to a more detailed view">
             <ImageFullWidth
-              src="/assets/myanimelist/list-overview.svg"
+              src="/assets/myanimelist/list-overview.png"
               alt="New designs for MyList tab and sample list"
             />
           </Gallery>
@@ -114,7 +114,7 @@ export default function MyAnimeList() {
             >
               <GalleryCard isOriginal={true}>
                 <ImageCard
-                  src="/assets/myanimelist/my-list-old.svg"
+                  src="/assets/myanimelist/my-list-old.png"
                   alt="Old MyLists tab view"
                 />
               </GalleryCard>
@@ -125,7 +125,7 @@ export default function MyAnimeList() {
             >
               <GalleryCard isOriginal={false}>
                 <ImageCard
-                  src="/assets/myanimelist/my-list-new.svg"
+                  src="/assets/myanimelist/my-list-new.png"
                   alt="New MyLists tab view"
                 />
               </GalleryCard>
@@ -134,11 +134,11 @@ export default function MyAnimeList() {
           <Gallery caption="The original list format of the watchlist (left) differs quite drastically from the grid format of the seasonal tab (right)">
             <GalleryCard isOriginal={true}>
               <ImageCard
-                src="/assets/myanimelist/to-watch-old.svg"
+                src="/assets/myanimelist/to-watch-old.png"
                 alt="Current (old) To-Watch list"
               />
               <ImageCard
-                src="/assets/myanimelist/seasonal-old.svg"
+                src="/assets/myanimelist/seasonal-old.png"
                 alt="Current (old) seasonal anime view"
               />
             </GalleryCard>
@@ -146,11 +146,11 @@ export default function MyAnimeList() {
           <Gallery caption="Updated watchlist (left) uses same layout and format as seasonal tab (right) for consistency. Information within the tiles is also more organized ">
             <GalleryCard isOriginal={false}>
               <ImageCard
-                src="/assets/myanimelist/to-watch-new.svg"
+                src="/assets/myanimelist/to-watch-new.png"
                 alt="Redesigned To-Watch list"
               />
               <ImageCard
-                src="/assets/myanimelist/seasonal-new.svg"
+                src="/assets/myanimelist/seasonal-new.png"
                 alt="Redesigned seasonal anime view"
               />
             </GalleryCard>
@@ -173,7 +173,7 @@ export default function MyAnimeList() {
               <Image
                 width="380"
                 height="365"
-                src="/assets/myanimelist/seasonal-wireframe.svg"
+                src="/assets/myanimelist/seasonal-wireframe.png"
                 alt="Mid-fidelity wireframe showing new seasonal calendar feature"
               />
             </GalleryCard>
@@ -185,7 +185,7 @@ export default function MyAnimeList() {
                 <ImageCard
                   width={244}
                   height={500}
-                  src="/assets/myanimelist/home-old.svg"
+                  src="/assets/myanimelist/home-old.png"
                   alt="Old home screen"
                 />
               </GalleryCard>
@@ -195,13 +195,13 @@ export default function MyAnimeList() {
                 <ImageCard
                   width={231}
                   height={500}
-                  src="/assets/myanimelist/home-new.svg"
+                  src="/assets/myanimelist/home-new.png"
                   alt="New home screen"
                 />
                 <ImageCard
                   width={231}
                   height={500}
-                  src="/assets/myanimelist/calendar.svg"
+                  src="/assets/myanimelist/calendar.png"
                   alt="Anime schedule"
                 />
               </GalleryCard>
@@ -219,11 +219,11 @@ export default function MyAnimeList() {
           <Gallery caption="The lack of headers confused quite a few users when I conducted the audit. Some people didn’t know that the people below the characters were their voice actors">
             <GalleryCard isOriginal={true}>
               <ImageCard
-                src="/assets/myanimelist/show-page-old.svg"
+                src="/assets/myanimelist/show-page-old.png"
                 alt="Screen showing old show page view"
               />
               <ImageCard
-                src="/assets/myanimelist/va-old.svg"
+                src="/assets/myanimelist/va-old.png"
                 alt="Screen showing how voice actors were organized"
               />
             </GalleryCard>
@@ -231,11 +231,11 @@ export default function MyAnimeList() {
           <Gallery caption="The power of labels: you can quickly scan for information now">
             <GalleryCard isOriginal={false}>
               <ImageCard
-                src="/assets/myanimelist/show-page-new.svg"
+                src="/assets/myanimelist/show-page-new.png"
                 alt="Screen showing new show page view"
               />
               <ImageCard
-                src="/assets/myanimelist/va-new.svg"
+                src="/assets/myanimelist/va-new.png"
                 alt="Screen showing how voice actors are newly organized"
               />
             </GalleryCard>
@@ -260,7 +260,7 @@ export default function MyAnimeList() {
           </p>
           <Gallery caption="">
             <ImageFullWidth
-              src="/assets/myanimelist/accessibility.svg"
+              src="/assets/myanimelist/accessibility.png"
               alt="Collage showing accessibility tools that were used"
             />
           </Gallery>
