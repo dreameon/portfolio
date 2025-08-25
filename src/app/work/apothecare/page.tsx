@@ -132,6 +132,7 @@ export default function Apothecare() {
                 <ImageCard
                   src={skinProfileComponents}
                   alt="Components of skin profile"
+                  height="h-full lg:h-[600px]"
                 />
               </GalleryCard>
             </Gallery>

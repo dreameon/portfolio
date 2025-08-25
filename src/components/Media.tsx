@@ -76,7 +76,7 @@ export function GalleryCard({
 
   return (
     <div
-      className={`flex flex-col flex-1 min-[800px]:flex-row justify-center items-center self-stretch md:px-[24px] gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
+      className={`flex flex-col flex-1 min-[800px]:flex-row justify-center items-center self-stretch px-[24px] gap-8 ${verticalPadding} rounded-(--Radius-Card) ${cardColour}`}
     >
       {children}
     </div>

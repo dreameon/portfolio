@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DropdownMenu } from "radix-ui";
 import Image from "next/image";
 import Icon from "~/public/assets/icon.png";
+import DownArrow from "~/public/assets/down-arrow.png";
 
 function NavElement({
   paths,
@@ -20,7 +21,7 @@ function NavElement({
     : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex justify-center items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
+      className={`flex flex-row gap-[8px] items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
