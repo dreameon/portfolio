@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Avatar from "~/public/assets/home/avatar.png";
 import SnuggleBanner from "~/public/assets/home/snuggle-banner.png";
 import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
+import Resume from "~/public/assets/design_resume.pdf";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 function ProjectCard({
@@ -49,8 +52,17 @@ function Intro() {
         </div>
         <div className="flex flex-col gap-[16px]">
           <p className="text-(--Colour-Font-Secondary)">
-            i&apos;m an <b>artist</b> with a bachelors in <b>compsci</b> from
-            uwaterloo.
+            i&apos;m an <b>artist</b> with a bachelors in{" "}
+            <Link
+              href="/assets/design_resume.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted">
+                compsci
+              </b>
+            </Link>{" "}
+            from uwaterloo.
             <br />i speak both design and code.
           </p>
 
