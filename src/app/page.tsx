@@ -59,7 +59,7 @@ function Intro() {
               target="_blank"
             >
               {" "}
-              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted">
+              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
                 artist
               </b>{" "}
             </Link>
@@ -70,7 +70,7 @@ function Intro() {
               target="_blank"
             >
               {" "}
-              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted">
+              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
                 compsci
               </b>{" "}
             </Link>
