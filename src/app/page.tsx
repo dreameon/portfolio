@@ -52,16 +52,28 @@ function Intro() {
         </div>
         <div className="flex flex-col gap-[16px]">
           <p className="text-(--Colour-Font-Secondary)">
-            i&apos;m an <b>artist</b> with a bachelors in{" "}
+            i&apos;m an
+            <Link
+              href="https://puripalette.etsy.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {" "}
+              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted">
+                artist
+              </b>{" "}
+            </Link>
+            with a bachelors in
             <Link
               href="/assets/design_resume.pdf"
               rel="noopener noreferrer"
               target="_blank"
             >
+              {" "}
               <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted">
                 compsci
-              </b>
-            </Link>{" "}
+              </b>{" "}
+            </Link>
             from uwaterloo.
             <br />i speak both design and code.
           </p>
