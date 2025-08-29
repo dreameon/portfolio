@@ -8,6 +8,12 @@ import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
 import Resume from "~/public/assets/design_resume.pdf";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useState, useEffect } from "react";
+import { Fira_Code } from "next/font/google";
+
+const SourceCodePro = Fira_Code({
+  variable: "--Source-Code-Pro",
+});
 
 function ProjectCard({
   bannerImgSrc,
@@ -74,13 +80,17 @@ function Intro() {
                 compsci
               </b>{" "}
             </Link>
-            from uwaterloo.
-            <br />i speak both design and code.
+            from uwaterloo .
+            <br /> i speak both design & code .{" "}
+            {/* There's an issue with this: the custom font isn't being applied here */}
+            <span className={`text-[0.75rem] ${SourceCodePro.className}`}>
+              (i coded this website myself!)
+            </span>
           </p>
 
           <figcaption>
             i&apos;m also a <s>hoarder</s> collector of a variety of things,
-            have way too many hobbies, and overuse peace sign poses in photos.
+            have way too many hobbies, and overuse peace sign poses in photos .
           </figcaption>
         </div>
       </div>

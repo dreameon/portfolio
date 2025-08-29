@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Ovo, Mulish } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const ovo = Ovo({
   variable: "--font-ovo",
@@ -26,9 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ovo.variable} ${mulish.variable} antialiased`}>
+      <body
+        className={`${ovo.variable} ${mulish.variable} antialiased pb-[64px]`}
+      >
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
