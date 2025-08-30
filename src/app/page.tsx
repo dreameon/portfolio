@@ -6,9 +6,7 @@ import Avatar from "~/public/assets/home/avatar.png";
 import SnuggleBanner from "~/public/assets/home/snuggle-banner.png";
 import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
-import Resume from "~/public/assets/design_resume.pdf";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { useState, useEffect } from "react";
 import { Fira_Code } from "next/font/google";
 
 const SourceCodePro = Fira_Code({
