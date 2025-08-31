@@ -9,8 +9,9 @@ import MALBanner from "~/public/assets/home/myanimelist-banner.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Fira_Code } from "next/font/google";
 
-const SourceCodePro = Fira_Code({
-  variable: "--Source-Code-Pro",
+const FiraCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--Fira-Code",
 });
 
 function ProjectCard({
@@ -81,7 +82,7 @@ function Intro() {
             from uwaterloo .
             <br /> i speak both design & code .{" "}
             {/* There's an issue with this: the custom font isn't being applied here */}
-            <span className={`text-[0.75rem] ${SourceCodePro.className}`}>
+            <span className={`text-[0.75rem] ${FiraCode.className}`}>
               (i coded this website myself!)
             </span>
           </p>
