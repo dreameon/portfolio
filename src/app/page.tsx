@@ -53,32 +53,20 @@ function Intro() {
       <div className="flex flex-col flex-1 gap-[32px] items-start self-stretch">
         <div className="flex flex-col justify-center items-start gap-[24px] md:gap-[16px]">
           <h1 className="text-(--Colour-Font-Primary)">Hi, I&apos;m Evelyn!</h1>
-          <h4>my friends call me eevee (like the pokemon).</h4>
+          <p className="uppercase font-semibold leading-[100%] tracking-[1.28px] text-(--Colour-Font-Tertiary)">
+            my friends call me eevee (like the pokemon).
+          </p>
         </div>
         <div className="flex flex-col gap-[16px]">
           <p className="text-(--Colour-Font-Secondary)">
-            i&apos;m an
-            <Link
-              href="https://puripalette.etsy.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {" "}
-              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
-                artist
-              </b>{" "}
-            </Link>
-            with a bachelors in
-            <Link
-              href="/assets/design_resume.pdf"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {" "}
-              <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
-                compsci
-              </b>{" "}
-            </Link>
+            i&apos;m an{" "}
+            <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
+              artist
+            </b>{" "}
+            with a bachelors in{" "}
+            <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
+              compsci
+            </b>{" "}
             from uwaterloo .
             <br /> i speak both design & code .{" "}
             {/* There's an issue with this: the custom font isn't being applied here */}

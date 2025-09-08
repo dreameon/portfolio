@@ -5,7 +5,7 @@ import Link from "next/link";
 import { DropdownMenu } from "radix-ui";
 import Image from "next/image";
 import Icon from "~/public/assets/icon.png";
-import DownArrow from "~/public/assets/down-arrow.png";
+import externalIcon from "~/public/assets/external-link.png";
 
 function NavElement({
   paths,
@@ -21,7 +21,7 @@ function NavElement({
     : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex flex-row gap-[8px] items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
+      className={`flex flex-row justify-center gap-[8px] items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
@@ -110,6 +110,34 @@ export default function NavBar() {
             <Link href="/">home</Link>
           </NavElement>
           <DropDown />
+          <NavElement paths={["/puripalette"]} path={path}>
+            <Link
+              href="https://puripalette.etsy.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              small biz
+            </Link>
+            <Image
+              src={externalIcon}
+              alt="External link icon"
+              className="w-[12px] h-[12px]"
+            />
+          </NavElement>
+          <NavElement paths={["/resume"]} path={path}>
+            <Link
+              href="/assets/design_resume.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              resume
+            </Link>
+            <Image
+              src={externalIcon}
+              alt="External link icon"
+              className="w-[12px] h-[12px]"
+            />
+          </NavElement>
         </nav>
       </div>
     </div>
