@@ -21,7 +21,7 @@ function NavElement({
     : "text-(--Colour-Font-Tertiary)";
   return (
     <div
-      className={`flex flex-row justify-center gap-[8px] items-center py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
+      className={`py-[24px] ${style} hover:text-(--Colour-Font-Primary) transition ease-in-out duration-300`}
     >
       {children}
     </div>
@@ -115,28 +115,30 @@ export default function NavBar() {
               href="https://puripalette.etsy.com"
               rel="noopener noreferrer"
               target="_blank"
+              className="flex flex-row justify-center gap-[8px] items-center"
             >
               small biz
+              <Image
+                src={externalIcon}
+                alt="External link icon"
+                className="w-[12px] h-[12px]"
+              />
             </Link>
-            <Image
-              src={externalIcon}
-              alt="External link icon"
-              className="w-[12px] h-[12px]"
-            />
           </NavElement>
           <NavElement paths={["/resume"]} path={path}>
             <Link
               href="/assets/design_resume.pdf"
               rel="noopener noreferrer"
               target="_blank"
+              className="flex flex-row justify-center gap-[8px] items-center"
             >
               resume
+              <Image
+                src={externalIcon}
+                alt="External link icon"
+                className="w-[12px] h-[12px]"
+              />
             </Link>
-            <Image
-              src={externalIcon}
-              alt="External link icon"
-              className="w-[12px] h-[12px]"
-            />
           </NavElement>
         </nav>
       </div>
