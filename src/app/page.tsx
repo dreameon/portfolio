@@ -8,11 +8,33 @@ import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Fira_Code } from "next/font/google";
+import { motion } from "motion/react";
 
 const FiraCode = Fira_Code({
   subsets: ["latin"],
   variable: "--Fira-Code",
 });
+
+const container = {
+  hidden: { y: "20px", opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.2,
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+      ease: [0.42, 0.0, 0.58, 1.0],
+    },
+  },
+};
+
+const block = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+};
 
 function ProjectCard({
   bannerImgSrc,
@@ -24,9 +46,11 @@ function ProjectCard({
   projectTitle: string;
 }) {
   return (
-    <div
+    <motion.div
       className={`${project} flex flex-col flex-1 lg:flex-row items-center justify-center self-stretch h-auto lg:h-[256px] overflow-hidden
       shadow-[2px_4px_8px_rgba(107,84,39,0.10)] rounded-(--Radius-Card)`}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="">
         <Image
@@ -38,41 +62,45 @@ function ProjectCard({
       <div className="flex items-center justify-center self-stretch min-w-[256px] py-[24px] bg-(--Token-Colour-Project-Specs)">
         <h4>{projectTitle}</h4>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function Intro() {
   return (
-    <div className="flex flex-col md:flex-row flex-1 items-start self-stretch gap-[48px]">
+    <motion.div
+      className="flex flex-col md:flex-row flex-1 items-start self-stretch gap-[48px]"
+      variants={block}
+    >
       <Image
         src={Avatar}
         alt="Picture of me!"
-        className="w-[208px] h-[208px]"
+        className=" w-[208px] h-[208px]"
       />
-      <div className="flex flex-col flex-1 gap-[32px] items-start self-stretch">
-        <div className="flex flex-col justify-center items-start gap-[24px] md:gap-[16px]">
-          <h1 className="text-(--Colour-Font-Primary)">Hi, I&apos;m Evelyn!</h1>
-          <p className="uppercase font-semibold leading-[100%] tracking-[1.28px] text-(--Colour-Font-Tertiary)">
+      <div className="flex flex-col flex-1 gap-[24px] items-start self-stretch justify-between">
+        <div className="flex flex-col justify-center items-start gap-[8px]">
+          <h1 className="text-(--Colour-Font-Primary)">hi, i&apos;m Evelyn!</h1>
+          <span className={`text-[0.75rem]/[100%] ${FiraCode.className}`}>
+            (i designed and coded this website myself)!
+          </span>
+          {/* <p className="uppercase font-semibold leading-[100%] tracking-[1.28px] text-(--Colour-Font-Tertiary)">
             my friends call me eevee (like the pokemon).
-          </p>
+          </p> */}
         </div>
         <div className="flex flex-col gap-[16px]">
           <p className="text-(--Colour-Font-Secondary)">
-            i&apos;m an{" "}
+            {/* you can also call me eevee (like the pokemon) . <br /> */}
+            i&apos;m a{" "}
             <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
-              artist
+              designer
             </b>{" "}
             with a bachelors in{" "}
             <b className="hover:bg-[#fff3cf] underline underline-offset-2 decoration-dotted transition ease-in-out duration-300">
               compsci
             </b>{" "}
             from uwaterloo .
-            <br /> i speak both design & code .{" "}
-            {/* There's an issue with this: the custom font isn't being applied here */}
-            <span className={`text-[0.75rem] ${FiraCode.className}`}>
-              (i coded this website myself!)
-            </span>
+            <br /> my superpowers include inhaling new skills like kirby and
+            empathy .{" "}
           </p>
 
           <figcaption>
@@ -81,15 +109,23 @@ function Intro() {
           </figcaption>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="flex flex-col self-stretch items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] py-[64px] gap-(--Spacing-Sections)">
+    <motion.div
+      className="flex flex-col self-stretch items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] py-[128px] gap-(--Spacing-Sections)"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       <Intro />
-      <div className="flex flex-col flex-1 self-stretch gap-[24px]">
+      <motion.div
+        className="flex flex-col flex-1 self-stretch gap-[24px]"
+        variants={block}
+      >
         <h2>my works</h2>
         <div className="flex flex-col flex-1 items-start self-stretch gap-[48px]">
           <Link href="/work/snuggle" className="flex flex-1 self-stretch">
@@ -114,7 +150,7 @@ export default function Home() {
             ></ProjectCard>
           </Link>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

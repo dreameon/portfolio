@@ -73,7 +73,7 @@ function DropDown() {
             work
           </NavElement>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="w-[256px] border border-solid border-[#EDEDED]">
+        <DropdownMenu.Content className="w-[256px] border border-solid border-[#EDEDED] transition ease-in-out duration-300">
           <NavProject href="/work/snuggle">snuggle</NavProject>
           <NavProject href="/work/apothecare">apothecare</NavProject>
           <NavProject href="/work/myanimelist">myanimelist</NavProject>
