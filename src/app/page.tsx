@@ -79,8 +79,8 @@ function Intro() {
               compsci
             </b>{" "}
             from uwaterloo .
-            <br /> my superpowers include inhaling new skills like kirby and
-            empathy .{" "}
+            <br /> my superpowers include empathy and inhaling new skills like
+            kirby .{" "}
           </p>
 
           <figcaption>
