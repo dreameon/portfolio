@@ -1,4 +1,8 @@
+"use client";
+
 import { PropsWithChildren } from "react";
+import { fadeInItemAnimation } from "@/utilities/Animation";
+import * as motion from "motion/react-client";
 
 function Overview({ overview }: { overview: string[] }) {
   return (
@@ -71,7 +75,13 @@ export function ProjectSynopsis({
   prototypeLink: string;
 }) {
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] gap-(--Spacing-Synopsis-Mobile) md:gap-(--Spacing-Synopsis) self-stretch">
+    <motion.div
+      variants={fadeInItemAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+      className="flex flex-col md:flex-row lg:flex-row items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] gap-(--Spacing-Synopsis-Mobile) md:gap-(--Spacing-Synopsis) self-stretch"
+    >
       <Overview overview={overview} />
       <ProjectSpecs
         role={role}
@@ -79,6 +89,6 @@ export function ProjectSynopsis({
         projectTime={projectTime}
         prototypeLink={prototypeLink}
       ></ProjectSpecs>
-    </div>
+    </motion.div>
   );
 }

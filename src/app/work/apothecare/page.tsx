@@ -1,5 +1,5 @@
 import { ParagraphBlock, Section } from "@/components/Sections";
-import Project from "@/components/Project";
+import { Project } from "@/components/Project";
 import {
   Gallery,
   GalleryContainer,

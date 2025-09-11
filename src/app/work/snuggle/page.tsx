@@ -1,5 +1,5 @@
 import { Section, Subsection, ParagraphBlock } from "@/components/Sections";
-import Project from "@/components/Project";
+import { Project } from "@/components/Project";
 import {
   PainPoint,
   PainPoints,

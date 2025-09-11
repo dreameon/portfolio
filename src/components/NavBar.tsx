@@ -6,6 +6,12 @@ import { DropdownMenu } from "radix-ui";
 import Image from "next/image";
 import Icon from "~/public/assets/icon.png";
 import externalIcon from "~/public/assets/external-link.png";
+import * as motion from "motion/react-client";
+import { AnimatePresence } from "motion/react";
+import {
+  dropDownAnimation,
+  dropDownItemAnimation,
+} from "@/utilities/Animation";
 
 function NavElement({
   paths,
@@ -32,15 +38,17 @@ function NavElement({
 function NavProject({ href, children }: { href: string; children: ReactNode }) {
   return (
     <DropdownMenu.Item asChild>
-      <Link
-        href={href}
-        className="flex self-stretch justify-center items-center px-[32px] py-[16px]
+      <motion.div variants={dropDownItemAnimation}>
+        <Link
+          href={href}
+          className="flex self-stretch justify-center items-center px-[32px] py-[16px]
       font-[Mulish] text-[0.75rem]/[1rem] tracking-[0.96px] uppercase text-(--Colour-Font-Tertiary)
-       bg-white hover:bg-[#EDEDED] hover:text-(--Colour-Font-Secondary) no-underline
+       hover:bg-[#EDEDED] hover:text-(--Colour-Font-Secondary) no-underline
     active:bg-[#EDEDED] active:text-(--Colour-Font-Secondary) transition ease-in-out duration-300"
-      >
-        {children}
-      </Link>
+        >
+          {children}
+        </Link>
+      </motion.div>
     </DropdownMenu.Item>
   );
 }
@@ -65,7 +73,10 @@ function DropDown() {
         onOpenChange={setDropdownVisible}
         modal={false}
       >
-        <DropdownMenu.Trigger onMouseOver={handleMouseEnter}>
+        <DropdownMenu.Trigger
+          onMouseOver={handleMouseEnter}
+          className="relative z-0"
+        >
           <NavElement
             paths={["/work/snuggle", "/work/apothecare", "/work/myanimelist"]}
             path={path}
@@ -73,11 +84,24 @@ function DropDown() {
             work
           </NavElement>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="w-[256px] border border-solid border-[#EDEDED] transition ease-in-out duration-300">
-          <NavProject href="/work/snuggle">snuggle</NavProject>
-          <NavProject href="/work/apothecare">apothecare</NavProject>
-          <NavProject href="/work/myanimelist">myanimelist</NavProject>
-        </DropdownMenu.Content>
+
+        <AnimatePresence>
+          {isDropdownVisible && (
+            <DropdownMenu.Content asChild forceMount>
+              <motion.div
+                className="w-[256px] border border-solid  bg-white border-[#EDEDED]"
+                variants={dropDownAnimation}
+                initial="initial"
+                animate="animate"
+                exit="initial"
+              >
+                <NavProject href="/work/snuggle">snuggle</NavProject>
+                <NavProject href="/work/apothecare">apothecare</NavProject>
+                <NavProject href="/work/myanimelist">myanimelist</NavProject>
+              </motion.div>
+            </DropdownMenu.Content>
+          )}
+        </AnimatePresence>
       </DropdownMenu.Root>
     </div>
   );

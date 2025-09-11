@@ -1,24 +1,39 @@
+"use client";
+
 import { ProjectSynopsis } from "./ProjectSynopsis";
 import { PropsWithChildren, type ReactNode } from "react";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import * as motion from "motion/react-client";
+import {
+  fadeInAnimation,
+  fadeInItemAnimation,
+  bannerAnimation,
+} from "@/utilities/Animation";
 
 function ProjectSample({ src, alt }: { src: StaticImport; alt: string }) {
   return (
-    <div className="flex flex-col items-center self-stretch px-8 bg-(--Token-Colour-Card)">
+    <motion.div
+      className="flex flex-col items-center self-stretch px-8 bg-(--Token-Colour-Card)"
+      variants={fadeInItemAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <Image
         sizes="100vw"
         className="w-full lg:max-w-[1184px] h-auto"
         src={src}
         alt={alt}
       />
-    </div>
+    </motion.div>
   );
 }
 
 function Banner({ src, alt }: { src: StaticImport; alt: string }) {
   return (
-    <div
+    <motion.div
+      variants={bannerAnimation}
       className="flex flex-col justify-center overflow-hidden items-center self-stretch
       px-8 md:px-16 lg:px-auto bg-(--Token-Colour-Banner-Background)"
     >
@@ -28,24 +43,30 @@ function Banner({ src, alt }: { src: StaticImport; alt: string }) {
         src={src}
         alt={alt}
       />
-    </div>
+    </motion.div>
   );
 }
 
 function ProjectTitle({ children }: PropsWithChildren) {
   return (
-    <div className="flex flex-col justify-center items-start mx-8 md:mx-16 lg:mx-auto lg:min-w-[928px] gap-[8px] self-stretch">
+    <motion.div
+      className="flex flex-col justify-center items-start mx-8 md:mx-16 lg:mx-auto lg:min-w-[928px] gap-[8px] self-stretch"
+      variants={fadeInItemAnimation}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <div
         className="flex pr-[64px] justify-center items-center gap-[10px] 
       border-b-[4px] border-solid border-(--Token-Colour-Border)"
       >
         <h1 className="text-[3rem] lg:text-[4rem]">{children}</h1>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
-export default function Project({
+export function Project({
   title,
   bannerSrc,
   sampleSrc,
@@ -67,9 +88,17 @@ export default function Project({
   children: ReactNode;
 }) {
   return (
-    <div className="project flex flex-col">
+    <motion.div
+      variants={fadeInAnimation}
+      initial="initial"
+      animate="animate"
+      className="project flex flex-col"
+    >
       <Banner src={bannerSrc} alt={`Banner for ${title} project`} />
-      <div className="flex py-(--Spacing-Sections-Mobile) md:py-(--Spacing-Sections) flex-col items-start gap-(--Spacing-Sections-Mobile) md:gap-(--Spacing-Sections) self-stretch">
+      <motion.div
+        variants={fadeInItemAnimation}
+        className="flex py-(--Spacing-Sections-Mobile) md:py-(--Spacing-Sections) flex-col items-start gap-(--Spacing-Sections-Mobile) md:gap-(--Spacing-Sections) self-stretch"
+      >
         <ProjectTitle>{title}</ProjectTitle>
         <ProjectSynopsis
           overview={overview}
@@ -83,7 +112,7 @@ export default function Project({
           alt={`Sample screens for ${title} project`}
         />
         {children}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

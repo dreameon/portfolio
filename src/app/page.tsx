@@ -8,33 +8,13 @@ import ApothecareBanner from "~/public/assets/home/apothecare-banner.png";
 import MALBanner from "~/public/assets/home/myanimelist-banner.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Fira_Code } from "next/font/google";
-import { motion } from "motion/react";
+import * as motion from "motion/react-client";
+import { fadeInAnimation, fadeInItemAnimation } from "@/utilities/Animation";
 
 const FiraCode = Fira_Code({
   subsets: ["latin"],
   variable: "--Fira-Code",
 });
-
-const container = {
-  hidden: { y: "20px", opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.2,
-      delayChildren: 0.2,
-      staggerChildren: 0.4,
-      ease: [0.42, 0.0, 0.58, 1.0],
-    },
-  },
-};
-
-const block = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
 
 function ProjectCard({
   bannerImgSrc,
@@ -70,7 +50,7 @@ function Intro() {
   return (
     <motion.div
       className="flex flex-col md:flex-row flex-1 items-start self-stretch gap-[48px]"
-      variants={block}
+      variants={fadeInItemAnimation}
     >
       <Image
         src={Avatar}
@@ -117,14 +97,14 @@ export default function Home() {
   return (
     <motion.div
       className="flex flex-col self-stretch items-start mx-8 md:mx-16 lg:mx-auto max-w-[928px] py-[128px] gap-(--Spacing-Sections)"
-      variants={container}
-      initial="hidden"
-      animate="show"
+      variants={fadeInAnimation}
+      initial="initial"
+      animate="animate"
     >
       <Intro />
       <motion.div
         className="flex flex-col flex-1 self-stretch gap-[24px]"
-        variants={block}
+        variants={fadeInItemAnimation}
       >
         <h2>my works</h2>
         <div className="flex flex-col flex-1 items-start self-stretch gap-[48px]">
