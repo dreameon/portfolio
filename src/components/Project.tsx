@@ -1,5 +1,3 @@
-"use client";
-
 import { ProjectSynopsis } from "./ProjectSynopsis";
 import { PropsWithChildren, type ReactNode } from "react";
 import Image from "next/image";

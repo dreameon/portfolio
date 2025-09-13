@@ -1,5 +1,3 @@
-"use client";
-
 import { PropsWithChildren } from "react";
 import { fadeInItemAnimation } from "@/utilities/Animation";
 import * as motion from "motion/react-client";
